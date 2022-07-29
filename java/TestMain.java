@@ -21,8 +21,8 @@ public class TestMain {
 
         List<Goods> shoppingCart = new ArrayList<>();
 
-        Goods appleGoods = new Goods(apple, 5);
-        Goods strawberryGoods = new Goods(strawberry, 5);
+        Goods appleGoods = new Goods(apple, 10);
+        Goods strawberryGoods = new Goods(strawberry, 10);
         //  购物车添加苹果及数量
         shoppingCart.add(appleGoods);
         //  购物车添加草莓及数量
@@ -36,7 +36,7 @@ public class TestMain {
          * */
         //  芒果
         Fruit mango = new Fruit("芒果", new BigDecimal(20));
-        Goods mangoGoods = new Goods(mango, 5);
+        Goods mangoGoods = new Goods(mango, 10);
         //  购物车添加芒果及数量
         shoppingCart.add(mangoGoods);
 
@@ -47,8 +47,10 @@ public class TestMain {
          * 问题 （3）
          * */
         //  草莓打八折
-        strawberry.discount(8);
-
+        //  打折数
+        BigDecimal count = strawberry.getPrice().multiply(BigDecimal.valueOf(8.0 / 10));
+        //  价格设置
+        strawberry.setPrice(count);
         BigDecimal sum03 = Checkout(shoppingCart);
         System.out.println("问题 (3) : " + sum03);
 

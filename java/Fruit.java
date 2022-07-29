@@ -35,14 +35,6 @@ public class Fruit {
         this.price = price;
     }
 
-    /**
-     * 打折
-     */
-    public void discount(int discountedNumber) {
-        this.price = price.multiply(BigDecimal.valueOf((double) discountedNumber / 10));
-        System.out.println(name + "打折后的价格为 ： " + price);
-    }
-
     public Fruit(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
